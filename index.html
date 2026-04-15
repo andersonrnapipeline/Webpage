@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RNA-Seq Projects — Anderson Diagnostics & Labs</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="header-title">
+        <h1>RNA-Seq Projects</h1>
+        <p class="header-subtitle">Anderson Diagnostics &amp; Labs · Bioinformatics Division</p>
+      </div>
+      <div class="header-meta">
+        <span id="last-updated" class="last-updated"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS BAR -->
+  <section class="stats-bar">
+    <div class="stat-card">
+      <span class="stat-number" id="stat-total">—</span>
+      <span class="stat-label">Total Projects</span>
+    </div>
+    <div class="stat-card stat-completed">
+      <span class="stat-number" id="stat-completed">—</span>
+      <span class="stat-label">Completed</span>
+    </div>
+    <div class="stat-card stat-active">
+      <span class="stat-number" id="stat-active">—</span>
+      <span class="stat-label">Active</span>
+    </div>
+    <div class="stat-card stat-waiting">
+      <span class="stat-number" id="stat-waiting">—</span>
+      <span class="stat-label">Waiting</span>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section class="filter-bar">
+    <button class="filter-btn active" data-filter="All">All</button>
+    <button class="filter-btn" data-filter="In Progress">In Progress</button>
+    <button class="filter-btn" data-filter="QC">QC</button>
+    <button class="filter-btn" data-filter="Waiting">Waiting</button>
+    <button class="filter-btn" data-filter="Completed">Completed</button>
+    <button class="filter-btn" data-filter="On Hold">On Hold</button>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="search-bar">
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Search by project name, client, or institution…"
+      autocomplete="off"
+    />
+  </section>
+
+  <!-- PROJECT CARDS -->
+  <main>
+    <div id="loading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading projects…</p>
+    </div>
+    <div id="error-state" class="error-state hidden">
+      <p>Could not load project data. Please check the API URL in <code>app.js</code>.</p>
+    </div>
+    <div id="empty-state" class="empty-state hidden">
+      <p>No projects match the current filter.</p>
+    </div>
+    <div id="cards-grid" class="cards-grid hidden"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      Maintained by Jana Lab · Anderson Diagnostics &amp; Labs ·
+      <a href="https://github.com/andersonrnapipeline" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
